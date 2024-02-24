@@ -44,3 +44,10 @@ Route::get('/about', [AboutController::class,'about']);
 Route::get('/articles/{id}', [ArticlesController::class,'articles']);
 
 Route::resource('photos', PhotoController::class);
+
+Route::get('/greeting', function () {
+    return view('blog.hello', ['name' => 'Alega Naufal Akbar']);
+});
+
+Route::get('/greetings', [WelcomeController::class, 
+'greeting']);
